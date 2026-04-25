@@ -3,10 +3,10 @@ package model;
 public class GradeRecord {
     private String studentUsername;
     private String courseCode;
-    private Integer midtermExam;
-    private Integer finalExam;
+    private double midtermExam;
+    private double finalExam;
 
-    public GradeRecord(String studentUsername, String courseCode, Integer midtermExam, Integer finalExam) {
+    public GradeRecord(String studentUsername, String courseCode, double midtermExam, double finalExam) {
         this.studentUsername = studentUsername;
         this.courseCode = courseCode;
         this.midtermExam = midtermExam;
@@ -29,19 +29,23 @@ public class GradeRecord {
         this.courseCode = courseCode;
     }
 
-    public Integer getMidtermExam() {
+    public double getMidtermExam() {
         return midtermExam;
     }
 
-    public void setMidtermExam(Integer midtermExam) {
+    public void setMidtermExam(double midtermExam) {
         this.midtermExam = midtermExam;
     }
 
-    public Integer getFinalExam() {
+    public double getFinalExam() {
         return finalExam;
     }
 
-    public void setFinalExam(Integer finalExam) {
+    public void setFinalExam(double finalExam) {
         this.finalExam = finalExam;
+    }
+
+    public String toFileString() {
+        return super.toString();
     }
 }

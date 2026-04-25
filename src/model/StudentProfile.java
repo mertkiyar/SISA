@@ -1,15 +1,13 @@
 package model;
 
-import java.util.Date;
-
 public class StudentProfile {
     private String studentId;
     private String fullName;
     private String department;
-    private Date year;
+    private int year;
     private String username;
 
-    public StudentProfile(String studentId, String fullName, String department, Date year, String username) {
+    public StudentProfile(String studentId, String fullName, String department, int year, String username) {
         this.studentId = studentId;
         this.fullName = fullName;
         this.department = department;
@@ -41,11 +39,11 @@ public class StudentProfile {
         this.department = department;
     }
 
-    public Date getYear() {
+    public int getYear() {
         return year;
     }
 
-    public void setYear(Date year) {
+    public void setYear(int year) {
         this.year = year;
     }
 
@@ -55,5 +53,9 @@ public class StudentProfile {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String toFileString() {
+        return super.toString();
     }
 }

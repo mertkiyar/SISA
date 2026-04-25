@@ -54,4 +54,8 @@ public class User {
     public void setReferenceID(String referenceID) {
         this.referenceID = referenceID;
     }
+
+    public String toFileString() {
+        return super.toString();
+    }
 }

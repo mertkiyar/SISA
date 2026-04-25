@@ -3,8 +3,8 @@ package model;
 public class Course {
     private String courseCode;
     private String courseName;
-    private Integer credit;
-    private Integer quota;
+    private int credit;
+    private int quota;
     private String instructorUsername;
 
     public Course(String courseName, String courseCode, Integer credit, Integer quota, String instructorUsername) {
@@ -31,19 +31,19 @@ public class Course {
         this.courseName = courseName;
     }
 
-    public Integer getCredit() {
+    public int getCredit() {
         return credit;
     }
 
-    public void setCredit(Integer credit) {
+    public void setCredit(int credit) {
         this.credit = credit;
     }
 
-    public Integer getQuota() {
+    public int getQuota() {
         return quota;
     }
 
-    public void setQuota(Integer quota) {
+    public void setQuota(int quota) {
         this.quota = quota;
     }
 
