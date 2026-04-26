@@ -60,6 +60,7 @@ public class LoginPage extends JFrame {
         gbc.insets = new Insets(15, 5, 5, 5);
         mainPanel.add(btnLogin, gbc);
         btnLogin.addActionListener(e -> handleLogin());
+        pfPassword.addActionListener(e -> handleLogin());
 
         add(mainPanel);
         setVisible(true);
@@ -88,16 +89,15 @@ public class LoginPage extends JFrame {
         }
 
         if(user.getRole().equals("ADMIN")) {
+            setVisible(false);
             new AdminPanel();
         } else if(user.getRole().equals("INSTRUCTOR")) {
+            setVisible(false);
             new InstructorPanel();
         } else if(user.getRole().equals("STUDENT")) {
+            setVisible(false);
             new StudentPanel();
         }
-
-        JOptionPane.showMessageDialog(this,
-                "Login successful! Welcome, " + username,
-                "Success",
-                JOptionPane.INFORMATION_MESSAGE);
+        dispose();
     }
 }
