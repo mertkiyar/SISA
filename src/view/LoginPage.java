@@ -1,5 +1,8 @@
 package view;
 
+import data.DataStore;
+import model.User;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -72,6 +75,29 @@ public class LoginPage extends JFrame {
                     "Warning",
                     JOptionPane.WARNING_MESSAGE);
             return;
+        }
+        User user = DataStore.findUser(username);
+        if (user == null) {
+
+            JOptionPane.showMessageDialog(this, "User not found");
+
+            return;
+
+        }
+
+        if (!user.getPassword().equals(password)) {
+
+            JOptionPane.showMessageDialog(this, "Wrong password");
+
+            return;
+
+        }
+        if(user.getRole().equals("ADMIN")) {
+            new AdminPanel();
+        } else if(user.getRole().equals("INSTRUCTOR")) {
+            new InstructorPanel();
+        } else if(user.getRole().equals("STUDENT")) {
+            new StudentPanel();
         }
 
         JOptionPane.showMessageDialog(this,
