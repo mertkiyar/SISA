@@ -93,7 +93,7 @@ public class LoginPage extends JFrame {
             new AdminPanel();
         } else if(user.getRole().equals("INSTRUCTOR")) {
             setVisible(false);
-            new InstructorPanel();
+            new InstructorPanel(user.getUsername());
         } else if(user.getRole().equals("STUDENT")) {
             setVisible(false);
             new StudentPanel();
